@@ -1,9 +1,9 @@
 ---
-import ArtistCard from "../../components/ArtistCard.astro";
-import Link from "../../components/Link.astro";
-import Layout from "../../layouts/Layout.astro";
+import ArtistCard from "../components/ArtistCard.astro";
+import Link from "../components/Link.astro";
+import Layout from "../layouts/Layout.astro";
 
-const allPosts = await Astro.glob("./*.md");
+const allPosts = await Astro.glob("./artists/*.md");
 ---
 
 <Layout
@@ -11,7 +11,9 @@ const allPosts = await Astro.glob("./*.md");
   description="Check out artists that have played at VIBEFEST!"
 >
   <div class="flex justify-center">
-    <div class="mt-48 mb-48 max-w-2xl">
+    <div
+      class="mt-48 mb-48 max-w-2xl rounded-lg p-5 transition-all hover:bg-black/90"
+    >
       <div class="mb-5 text-center">
         <Link href="/">← Back to Home</Link>
       </div>

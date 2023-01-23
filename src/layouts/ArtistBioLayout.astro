@@ -6,7 +6,9 @@ const { frontmatter } = Astro.props;
 
 <Layout title={`${frontmatter.title} - VIBEFEST Artist`}>
   <div class="flex justify-center">
-    <div class="mt-48 mb-48 max-w-2xl">
+    <div
+      class="mt-48 mb-48 max-w-2xl rounded-lg p-5 transition-all hover:bg-black/90"
+    >
       <div class="mb-5 text-center">
         <Link href="/artists">← Back to Artists</Link>
       </div>
