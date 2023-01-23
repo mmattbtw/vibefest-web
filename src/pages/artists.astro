@@ -28,7 +28,7 @@ const allPosts = await Astro.glob("./artists/*.md");
 
       <div class="mt-5">
         <h2 class="text-center font-VIBEFEST text-xl font-bold">Volume One</h2>
-        <div class="grid grid-cols-2 gap-7">
+        <div class="flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:gap-7">
           {
             allPosts.map((post) => {
               if (post.frontmatter.volumes.includes(1)) {
@@ -42,7 +42,7 @@ const allPosts = await Astro.glob("./artists/*.md");
           Volume Two
         </h2>
 
-        <div class="grid grid-cols-2 gap-7">
+        <div class="flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:gap-7">
           {
             allPosts.map((post) => {
               if (post.frontmatter.volumes.includes(2)) {
@@ -55,7 +55,7 @@ const allPosts = await Astro.glob("./artists/*.md");
         <h2 class="mt-10 text-center font-VIBEFEST text-xl font-bold">
           Volume Three
         </h2>
-        <div class="grid grid-cols-2 gap-7">
+        <div class="flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:gap-7">
           {
             allPosts.map((post) => {
               if (post.frontmatter.volumes.includes(3)) {
@@ -68,7 +68,7 @@ const allPosts = await Astro.glob("./artists/*.md");
         <h2 class="mt-10 text-center font-VIBEFEST text-xl font-bold">
           Volume Four
         </h2>
-        <div class="grid grid-cols-2 gap-7">
+        <div class="flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:gap-7">
           {
             allPosts.map((post) => {
               if (post.frontmatter.volumes.includes(4)) {
