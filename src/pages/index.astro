@@ -1,0 +1,37 @@
+---
+import Link from "../components/Link.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home">
+  <div class="flex justify-center">
+    <div
+      class="mt-48 max-w-2xl rounded-lg bg-black/90 p-5 backdrop-blur-sm backdrop-saturate-200 transition-all"
+    >
+      <h1 class="text-center font-VIBEFEST text-4xl font-bold">
+        VIBEFEST - VOLUME IV
+      </h1>
+      <p class="mt-4 text-center font-VIBEFEST text-lg">
+        <Link href="https://vrc.group/VIBE.9162">IN VRCHAT</Link> AND <Link
+          href="https://twitch.tv/VIBEFESTLIVE"
+        >
+          STREAMED ON TWITCH
+        </Link>
+        <br />
+        <Link href="https://discord.gg/9rJ5RKvn2J">JOIN OUR DISCORD</Link>
+        <br />
+        <Link href="https://vrc.group/VIBE.9162">
+          JOIN OUR VRCHAT GROUP: VIBE.9162
+        </Link>
+        <br />
+        <Link href="https://shop.vibefest.live">BUY THE CHARITY MERCH</Link>
+        <br />
+        <Link href="/artists">SEE THE ARTISTS</Link>
+      </p>
+      <iframe
+        src="https://radio.vibefest.live/public/radio_vibefest/embed?theme=dark"
+        title="Radio Vibefest. embed"
+        class="mt-5 min-h-[150px] w-full border-0"></iframe>
+    </div>
+  </div>
+</Layout>

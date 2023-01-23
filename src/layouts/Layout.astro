@@ -1,0 +1,241 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props as Props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/global.css" />
+    <title>{title ? `VIBEFEST - ${title}` : "VIBEFEST"}</title>
+
+    <!-- SEO -->
+    <meta
+      property="og:title"
+      content={title ? `VIBEFEST - ${title}` : "VIBEFEST"}
+    />
+    <meta property="og:image" content="/images/VibefestFlower.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content={description ?? "VIBEFEST"} />
+    <meta property="og:type" content="website" />
+
+    <meta name="theme-color" content="#e84270" media="not screen" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@VIBEFEST22" />
+    <meta
+      name="twitter:title"
+      content={title ? `VIBEFEST - ${title}` : "VIBEFEST"}
+    />
+    <meta name="twitter:description" content={description ?? "VIBEFEST"} />
+    <meta name="twitter:image" content="/images/VibefestFlower.png" />
+
+    <meta name="author" content="mmatt <matt@mmatt.net>" />
+    <meta property="description" content={description ?? "VIBEFEST"} />
+    <meta name="description" content={description ?? "VIBEFEST"} />
+  </head>
+  <body class="bg-black text-white">
+    <script>
+      // i stole this :3 https://codepen.io/Hyperplexed/pen/BaxROox
+      const images = document.getElementsByClassName("image");
+
+      let globalIndex = 1,
+        last = { x: 0, y: 0 };
+
+      // @ts-ignore
+      const activate = (image, x, y) => {
+        image.style.left = `${x}px`;
+        image.style.top = `${y}px`;
+        image.style.zIndex = `-${
+          Math.abs(image.dataset.index - globalIndex) + 1
+        }`;
+
+        image.dataset.status = "active";
+
+        last = { x, y };
+      };
+
+      // @ts-ignore
+      const distanceFromLast = (x, y) => {
+        return Math.hypot(x - last.x, y - last.y);
+      };
+
+      // @ts-ignore
+      const handleOnMove = (e) => {
+        if (distanceFromLast(e.clientX, e.clientY) > window.innerWidth / 20) {
+          const lead = images[globalIndex % images.length],
+            tail = images[(globalIndex - 5) % images.length];
+
+          activate(lead, e.clientX, e.clientY);
+
+          // @ts-ignore
+          if (tail) tail.dataset.status = "inactive";
+
+          globalIndex++;
+        }
+      };
+
+      window.onmousemove = (e) => handleOnMove(e);
+
+      window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+    </script>
+    <slot />
+    <!-- repeat this for every image up to 22 -->
+    <img
+      class="image"
+      data-index="0"
+      data-status="inactive"
+      src="/images/screenshots/1.jpeg"
+    />
+    <img
+      class="image"
+      data-index="1"
+      data-status="inactive"
+      src="/images/screenshots/2.jpeg"
+    />
+    <img
+      class="image"
+      data-index="2"
+      data-status="inactive"
+      src="/images/screenshots/3.jpeg"
+    />
+    <img
+      class="image"
+      data-index="3"
+      data-status="inactive"
+      src="/images/screenshots/4.jpeg"
+    />
+    <img
+      class="image"
+      data-index="4"
+      data-status="inactive"
+      src="/images/screenshots/5.jpeg"
+    />
+    <img
+      class="image"
+      data-index="5"
+      data-status="inactive"
+      src="/images/screenshots/6.jpeg"
+    />
+    <img
+      class="image"
+      data-index="6"
+      data-status="inactive"
+      src="/images/screenshots/7.jpeg"
+    />
+    <img
+      class="image"
+      data-index="7"
+      data-status="inactive"
+      src="/images/screenshots/8.jpeg"
+    />
+    <img
+      class="image"
+      data-index="8"
+      data-status="inactive"
+      src="/images/screenshots/9.png"
+    />
+    <img
+      class="image"
+      data-index="9"
+      data-status="inactive"
+      src="/images/screenshots/10.jpeg"
+    />
+    <img
+      class="image"
+      data-index="10"
+      data-status="inactive"
+      src="/images/screenshots/11.jpeg"
+    />
+    <img
+      class="image"
+      data-index="11"
+      data-status="inactive"
+      src="/images/screenshots/12.jpeg"
+    />
+    <img
+      class="image"
+      data-index="12"
+      data-status="inactive"
+      src="/images/screenshots/13.jpeg"
+    />
+    <img
+      class="image"
+      data-index="13"
+      data-status="inactive"
+      src="/images/screenshots/14.png"
+    />
+    <img
+      class="image"
+      data-index="14"
+      data-status="inactive"
+      src="/images/screenshots/15.jpeg"
+    />
+    <img
+      class="image"
+      data-index="15"
+      data-status="inactive"
+      src="/images/screenshots/16.jpeg"
+    />
+    <img
+      class="image"
+      data-index="16"
+      data-status="inactive"
+      src="/images/screenshots/17.jpeg"
+    />
+    <img
+      class="image"
+      data-index="17"
+      data-status="inactive"
+      src="/images/screenshots/18.jpeg"
+    />
+    <img
+      class="image"
+      data-index="18"
+      data-status="inactive"
+      src="/images/screenshots/19.jpeg"
+    />
+    <img
+      class="image"
+      data-index="19"
+      data-status="inactive"
+      src="/images/screenshots/20.jpeg"
+    />
+    <img
+      class="image"
+      data-index="20"
+      data-status="inactive"
+      src="/images/screenshots/21.jpeg"
+    />
+    <img
+      class="image"
+      data-index="21"
+      data-status="inactive"
+      src="/images/screenshots/22.jpeg"
+    />
+  </body>
+</html>
+
+<style>
+  .image {
+    width: 40vmin;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+  }
+
+  .image[data-status="inactive"] {
+    display: none;
+  }
+
+  .image[data-status="active"] {
+    display: block;
+  }
+</style>

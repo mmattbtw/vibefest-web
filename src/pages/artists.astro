@@ -1,0 +1,83 @@
+---
+import ArtistCard from "../components/ArtistCard.astro";
+import Link from "../components/Link.astro";
+import Layout from "../layouts/Layout.astro";
+
+const allPosts = await Astro.glob("./artists/*.md");
+---
+
+<Layout
+  title="Artists"
+  description="Check out artists that have played at VIBEFEST!"
+>
+  <div class="flex justify-center">
+    <div
+      class="mt-48 mb-48 max-w-2xl rounded-lg bg-black/90 p-5 backdrop-blur-sm backdrop-saturate-200 transition-all"
+    >
+      <div class="mb-5 text-center">
+        <Link href="/">← Back to Home</Link>
+      </div>
+      <h1 class="text-center font-VIBEFEST text-4xl font-bold">Artists</h1>
+      <p class="text-center">
+        ⚠️ some artists may be missing! help contribute <Link
+          href="https://github.com/mmattbtw/vibefest-web/tree/v2/src/pages/artists"
+        >
+          here!
+        </Link>
+      </p>
+
+      <div class="mt-5">
+        <h2 class="text-center font-VIBEFEST text-xl font-bold">Volume One</h2>
+        <div class="grid grid-cols-2 gap-7">
+          {
+            allPosts.map((post) => {
+              if (post.frontmatter.volumes.includes(1)) {
+                return <ArtistCard post={post} />;
+              }
+            })
+          }
+        </div>
+
+        <h2 class="mt-10 text-center font-VIBEFEST text-xl font-bold">
+          Volume Two
+        </h2>
+
+        <div class="grid grid-cols-2 gap-7">
+          {
+            allPosts.map((post) => {
+              if (post.frontmatter.volumes.includes(2)) {
+                return <ArtistCard post={post} />;
+              }
+            })
+          }
+        </div>
+
+        <h2 class="mt-10 text-center font-VIBEFEST text-xl font-bold">
+          Volume Three
+        </h2>
+        <div class="grid grid-cols-2 gap-7">
+          {
+            allPosts.map((post) => {
+              if (post.frontmatter.volumes.includes(3)) {
+                return <ArtistCard post={post} />;
+              }
+            })
+          }
+        </div>
+
+        <h2 class="mt-10 text-center font-VIBEFEST text-xl font-bold">
+          Volume Four
+        </h2>
+        <div class="grid grid-cols-2 gap-7">
+          {
+            allPosts.map((post) => {
+              if (post.frontmatter.volumes.includes(4)) {
+                return <ArtistCard post={post} />;
+              }
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
