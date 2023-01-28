@@ -8,6 +8,7 @@ const { href } = Astro.props as Props;
 
 <a
   href={href ?? "/"}
+  rel={href?.startsWith("/") ? "prefetch" : ""}
   class="rounded-lg text-VIBEFEST transition-all hover:bg-VIBEFEST hover:p-1 hover:text-white"
   ><slot /></a
 >
