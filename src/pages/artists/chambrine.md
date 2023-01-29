@@ -10,3 +10,10 @@ layout: ../../layouts/ArtistBioLayout.astro
 
 - [Twitter](https://twitter.com/Chambrine1)
 - [Twitch](https://www.twitch.tv/Chambrine)
+
+## Brand Resources
+
+### Logos
+
+- Color:
+  ![Chambrine Logo](/images/artistLogos/chambrine/color.png)
