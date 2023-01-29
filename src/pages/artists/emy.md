@@ -15,3 +15,10 @@ layout: ../../layouts/ArtistBioLayout.astro
 - [Merch](https://store.streamelements.com/trapdoorr)
 - [VIBEFEST Shop](https://shop.vibefest.live/collections/emy-collection)
 - [Carrd](https://polygonartt.carrd.co/)
+
+## Brand Resources
+
+### Logos
+
+- Color:
+  ![emy Logo](/images/artistLogos/emy/color.png)
