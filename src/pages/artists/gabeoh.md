@@ -13,3 +13,11 @@ layout: ../../layouts/ArtistBioLayout.astro
 - [YouTube](https://www.youtube.com/channel/UCpNJlde-TZBhtYuKC1pPjRw)
 - [Twitch](https://www.twitch.tv/gabeohlive)
 - [Spotify](https://open.spotify.com/artist/7vg0ph8OH8EB8cHo8nrbTM?nd=1)
+
+## Brand Resources
+
+### Logos
+
+- DJ Set:
+  - Black:
+    ![Gabe Oh Logo](/images/artistLogos/gabeoh/djsetBlack.png)
